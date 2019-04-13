@@ -78,16 +78,17 @@
 
 		$( function() {
 			var boardTags = window.boardTags.map(item => "."+item);
-					$(".cards").each (function() 
-						{
-							var boardElement = $(this);
-							boardElement.sortable({
-							 	 cursor: "move",
-								 delay: 150,
-								 distance: 5,
-								 handle: ".handle",
-							}); 
-					});				
+			$(".cards").each (function() 
+				{
+					var boardElement = $(this);
+					boardElement.sortable({
+					 	 cursor: "move",
+						 delay: 150,
+						 distance: 5,
+						 handle: ".handle",
+						 connectWith: boardTags,
+					}); 
+			});				
 		});
 
 	</script>
