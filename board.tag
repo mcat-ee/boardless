@@ -66,32 +66,25 @@
 	<div class="cardContainer">
 	<!-- <card></card> -->
 		<div class="boardTitle" contenteditable="true" placeholder="Enter title here"></div>
-		<div id="cards"></div>
+		<div id="cards">
+			<div each={item in this.items} class="rowContainer">
+				<div class="handle"></div>
+				<div class="cardText" contenteditable="true" placeholder="Enter text here"></div>
+			</div>
+		</div>
 		<div class="addCardButton" onclick="addCard()">
 			Add Card
 		</div>
 	</div>
 
 	<script type="text/javascript">
+		this.items = this.opts.items || [];
 		addCard = () => {
-
+			this.items.push("");
+			this.update();
 			//<div class="cardText" contenteditable="true" placeholder="Enter text here" >{ this.text || '' }</div>
-			var list = document.getElementById("cards");
-			var row = document.createElement("div");
-			var lead = document.createElement("div");
-			// lead.innerHTML = "A";
 
-			lead.className="handle";
-			row.appendChild(lead)
 			
-			row.className="rowContainer";
-			  var tag = document.createElement('div');
-			  tag.className="cardText";
-			  tag.contentEditable="true";
-			  // tag.placeholder="Enter text here";
-			  tag.setAttribute("placeholder", "Enter text here");
-			  row.appendChild(tag);
-			  list.appendChild(row)
 			  // riot.mount(tag, '');
 		}
 		$( function() {
