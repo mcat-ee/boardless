@@ -67,7 +67,7 @@
 	<div class="cardContainer">
 	<!-- <card></card> -->
 		<div class="boardTitle" contenteditable="true" placeholder="Enter title here"></div>
-		<div id="cards" class={this.opts.classNameForCards}>
+		<div id="cards" class={"cards " + this.opts.classNameForCards}>
 			<div each={item in items} class="rowContainer">
 				<div class="handle"></div>
 				<div class="cardText" contenteditable="true" placeholder="Enter text here"></div>
@@ -91,13 +91,17 @@
 			// for(var i = 0 ; i < elements.length ; i++) {
 				// var el = elements[i];
 				
-					$("#cards").sortable({
-				 	 cursor: "move",
-					 delay: 150,
-					 distance: 5,
-					 handle: ".handle",
-					 // connectWith: boardTags,
-				});				
+					$(".cards").each (function() 
+						{
+							var boardElement = $(this);
+							boardElement.sortable({
+							 	 cursor: "move",
+								 delay: 150,
+								 distance: 5,
+								 handle: ".handle",
+								 // connectWith: boardTags,
+							}); 
+					});				
 			// }
 
 		});
