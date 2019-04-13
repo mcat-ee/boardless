@@ -6,7 +6,7 @@
         <!-- <board></board> -->
         <div id="boardHolder"></div>
         <div > 
-            <div class="addBoardButton" onclick="addBoard()">
+            <div class="addBoardButton" onclick="addBoard()" tabindex="0">
                   Add Board
             </div>
          </div>
