@@ -13,7 +13,8 @@
 		}
 		.addCardButton{
 			width:100%;
-			height:75px;
+			padding-top:25px;
+			padding-bottom:25px;
 			text-align: center;
 			background-color: #ccc
 		}
@@ -32,11 +33,13 @@
 
 		.cardText{
 			flex: 1;
-			line-height: 50px;
+			line-height: 30px;
+			width:25%;
+			padding-right:20px;
 		}
 
 		.cardText:focus{
-		    line-height: 50px;
+		    line-height: 30px;
 		}
 		.rowContainer{
 			display: flex;
@@ -48,11 +51,21 @@
 		}
 
 		.handle {
-			flex: 0.25;
+
 		}
 
 		.handle:after {
-		  content: '\2807';
+			  content: '\2807';
+			  font-size: 35px;
+		 }
+		 
+		 .menuToggle {
+		 	flex: 0.25;
+		 	
+		 }
+
+		  .menuToggle:after {
+		  	content: '\2809';
 		  font-size: 35px;
 		  }
 	</style>
@@ -62,9 +75,10 @@
 			<div each={item in items} class="rowContainer">
 				<div class="handle"></div>
 				<div class="cardText" contenteditable="true" placeholder="Enter text here"></div>
+				<div class="menuToggle"></div>
 			</div>
 		</div>
-		<div class="addCardButton" onclick={() => this.addCard()}>
+		<div class="addCardButton" onclick={() => this.addCard()} tabindex="0">
 			Add Card
 		</div>
 	</div>

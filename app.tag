@@ -5,7 +5,11 @@
       <div id="boardContainer">
         <!-- <board></board> -->
         <div id="boardHolder"></div>
-        <div onclick="addBoard()">Add Board</div>
+        <div > 
+            <div class="addBoardButton" onclick="addBoard()">
+                  Add Board
+            </div>
+         </div>
       </div>
     </route>
     <route path="second">
@@ -21,6 +25,7 @@
   </nav>
   
   <script>
+    window.boardTags = [];
     this.on('mount', function() {
       route('first');
     });
@@ -28,8 +33,10 @@
     addBoard = () => {
       var list = document.getElementById("boardHolder");
         var tag = document.createElement('board');
+        var className = Math.random().toString(36).substring(7);
+        boardTags.push(className);
         list.appendChild(tag)
-        riot.mount(tag, '');
+        riot.mount(tag, { classNameForCards: className});
     }
   </script>
 
@@ -65,6 +72,14 @@
     
     div {
       margin-top: 10px;
+    }
+
+    .addBoardButton{
+      font-size: 2em;
+      padding-top:10px;
+      padding-bottom:10px;
+      width:200px;
+      background-color: #ccc;
     }
   </style>
 </app>
