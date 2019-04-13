@@ -10,6 +10,8 @@
 		#cards{
 			  display:flex;
 			  flex-direction: column;
+			  padding-top:25px;
+			  padding-bottom:25px;
 		}
 		.addCardButton{
 			width:100%;
