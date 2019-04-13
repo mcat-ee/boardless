@@ -10,6 +10,10 @@
 		.cardText{
 			width:100%;
 			height:100%;
+			min-width: 300px;
+			width:300px;
+			min-height: 50px;
+			background-color: #eee; 
 		}
 
 		.cardText:focus{
@@ -18,7 +22,7 @@
 
 		[contenteditable=true]:empty:before {
 		  content: attr(placeholder);
-		  display: block;  For Firefox 
+		  display: block;
 		}
 
 	</style>
