@@ -75,7 +75,7 @@
 			<div each={item in items} class="rowContainer">
 				<div class="handle"></div>
 				<div class="cardText" contenteditable="true" placeholder="Enter text here"></div>
-				<div class="menuToggle"></div>
+				<div class="menuToggle" tabindex="0"></div>
 			</div>
 		</div>
 		<div class="addCardButton" onclick={() => this.addCard()} tabindex="0">
