@@ -1,5 +1,4 @@
 <board>
-
 	<style type="text/css">
 		.cardContainer{
 			min-width: 300px;
@@ -9,7 +8,6 @@
 		}
 
 		#cards{
-			  /*position: relative;*/
 			  display:flex;
 			  flex-direction: column;
 		}
@@ -18,12 +16,9 @@
 			height:75px;
 			text-align: center;
 			background-color: #ccc
-			/*vertical-align: middle;*/
 		}
 
 		.boardTitle:focus{
-		    /*line-height: 50px;*/
-		    /*font-size: 2em;*/
 		}
 
 		.boardTitle{
@@ -36,10 +31,7 @@
 		}
 
 		.cardText{
-			/*width:100%;*/
-			/*height:100%;*/
 			flex: 1;
-			/*height:100%;*/
 			line-height: 50px;
 		}
 
@@ -65,7 +57,6 @@
 		  }
 	</style>
 	<div class="cardContainer">
-	<!-- <card></card> -->
 		<div class="boardTitle" contenteditable="true" placeholder="Enter title here"></div>
 		<div id="cards" class={"cards " + this.opts.classNameForCards}>
 			<div each={item in items} class="rowContainer">
@@ -86,11 +77,7 @@
 		};
 
 		$( function() {
-			// var elements = document.getElementsByClassName("addCardButton");
 			var boardTags = window.boardTags.map(item => "."+item);
-			// for(var i = 0 ; i < elements.length ; i++) {
-				// var el = elements[i];
-				
 					$(".cards").each (function() 
 						{
 							var boardElement = $(this);
@@ -99,11 +86,8 @@
 								 delay: 150,
 								 distance: 5,
 								 handle: ".handle",
-								 // connectWith: boardTags,
 							}); 
 					});				
-			// }
-
 		});
 
 	</script>
