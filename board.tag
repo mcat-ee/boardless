@@ -1,4 +1,5 @@
 <board>
+
 	<style type="text/css">
 		.cardContainer{
 			min-width: 300px;
@@ -66,36 +67,40 @@
 	<div class="cardContainer">
 	<!-- <card></card> -->
 		<div class="boardTitle" contenteditable="true" placeholder="Enter title here"></div>
-		<div id="cards">
-			<div each={item in this.items} class="rowContainer">
+		<div id="cards" class={this.opts.classNameForCards}>
+			<div each={item in items} class="rowContainer">
 				<div class="handle"></div>
 				<div class="cardText" contenteditable="true" placeholder="Enter text here"></div>
 			</div>
 		</div>
-		<div class="addCardButton" onclick="addCard()">
+		<div class="addCardButton" onclick={() => this.addCard()}>
 			Add Card
 		</div>
 	</div>
 
 	<script type="text/javascript">
-		this.items = this.opts.items || [];
-		addCard = () => {
+		this.items = opts.items || [];
+		this.addCard = () => {
 			this.items.push("");
 			this.update();
-			//<div class="cardText" contenteditable="true" placeholder="Enter text here" >{ this.text || '' }</div>
+		};
 
-			
-			  // riot.mount(tag, '');
-		}
 		$( function() {
-		$("#cards").sortable({
-			 cursor: "move",
-			 delay: 150,
-			 distance: 5,
-			 handle: ".handle",
+			// var elements = document.getElementsByClassName("addCardButton");
+			var boardTags = window.boardTags.map(item => "."+item);
+			// for(var i = 0 ; i < elements.length ; i++) {
+				// var el = elements[i];
+				
+					$("#cards").sortable({
+				 	 cursor: "move",
+					 delay: 150,
+					 distance: 5,
+					 handle: ".handle",
+					 // connectWith: boardTags,
+				});				
+			// }
+
 		});
-		});
-		// $("#cards").disableSelection();
 
 	</script>
 </board>
