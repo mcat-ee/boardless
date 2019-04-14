@@ -28,6 +28,10 @@
     window.boardTags = [];
     this.on('mount', function() {
       route('first');
+
+       makeRequest("GET", "/api/getBoards",null,(data) => { window.boards = data; createExistingBoards()},(err)=> {
+          console.log("Nope :(");
+        })
     });
 
     createExistingBoards = () => {
