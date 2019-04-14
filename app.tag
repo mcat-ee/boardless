@@ -48,6 +48,7 @@
     #boardContainer{
       display:flex;
       flex-direction: row;
+      margin-bottom:25px;
     }
     :scope {
       display: block;
@@ -61,6 +62,7 @@
       display: block;
       border-top: 1px solid #666;
       padding: 0 0 1em;
+      padding-top:10px;
     }
     nav > a {
       display: inline-block;
@@ -71,7 +73,6 @@
     }
     
     div {
-      margin-top: 10px;
     }
 
     .addBoardButton{
