@@ -21,7 +21,7 @@
   </router>
 <nav>
     <a href="#first">Boards</a>
-    <a href="#second">Second</a>
+    <!-- <a href="#second">Second</a> -->
   </nav>
   
   <script>
