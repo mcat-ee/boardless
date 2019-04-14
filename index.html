@@ -39,11 +39,11 @@
 					url: url,
 					crossDomain: true,
 					timeout: 5200,
-					success: onSuccessFunction(data),
-					error: onFailureFunction(data), 
+					success: (data) => onSuccessFunction(data),
+					error: (data) => onFailureFunction(data), 
 				};
 				if(requestType == "POST") {
-					params.data = JSON.stringify(data);
+					params.data = JSON.stringify(dataObj);
 					params.contentType = 'application/json';
 				}
 		    	$.ajax(params)
