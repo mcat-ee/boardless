@@ -17,6 +17,14 @@
 			  padding-right:5px;
 			  box-shadow: inset 0px 2px 2px -2px #888, inset 0px 0 0px 0px #CCC;
 		}
+
+		.unselectable {
+			-webkit-user-select: none; /* Safari */        
+			-moz-user-select: none; /* Firefox */
+			-ms-user-select: none; /* IE10+/Edge */
+			user-select: none; /* Standard */
+		}
+
 		.addCardButton{
 			width:100%;
 			padding-top:25px;
@@ -81,7 +89,7 @@
 		  }
 	</style>
 	<div class="cardContainer">
-		<div class="boardTitle" contenteditable="true" placeholder="Enter title here"></div>
+		<div class="unselectable boardTitle" contenteditable="true" placeholder="Enter title here"></div>
 		<div id="cards" class={"cards " + this.opts.classNameForCards}>
 			<div each={item in items} class="rowContainer">
 				<div class="handle"></div>
@@ -89,7 +97,7 @@
 				<div class="menuToggle" tabindex="0"></div>
 			</div>
 		</div>
-		<div class="addCardButton" onclick={() => this.addCard()} tabindex="0">
+		<div class="addCardButton unselectable" onclick={() => this.addCard()} tabindex="0">
 			Add Card
 		</div>
 	</div>

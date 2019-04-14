@@ -6,7 +6,7 @@
         <!-- <board></board> -->
         <div id="boardHolder"></div>
         <div > 
-            <div class="addBoardButton" onclick="addBoard()" tabindex="0">
+            <div class="unselectable addBoardButton" onclick="addBoard()" tabindex="0">
                   Add Board
             </div>
          </div>
@@ -20,7 +20,7 @@
     </route>
   </router>
 <nav>
-    <a href="#first">Boards</a>
+    <a href="#first" class="unselectable">Boards</a>
     <!-- <a href="#second">Second</a> -->
   </nav>
   
@@ -82,5 +82,13 @@
       width:200px;
       background-color: #ccc;
     }
+
+    .unselectable {
+      -webkit-user-select: none; /* Safari */        
+      -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* IE10+/Edge */
+      user-select: none; /* Standard */
+    }
+
   </style>
 </app>
