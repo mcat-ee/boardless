@@ -89,7 +89,7 @@
 		  }
 	</style>
 	<div class="cardContainer">
-		<div class="unselectable boardTitle" contenteditable="true" placeholder="Enter title here"></div>
+		<div class="unselectable boardTitle" contenteditable="true" placeholder="Enter title here">{this.boardTitle}</div>
 		<div id="cards" class={"cards " + this.opts.classNameForCards}>
 			<div each={item in items} class="rowContainer">
 				<div class="handle"></div>
@@ -104,6 +104,7 @@
 
 	<script type="text/javascript">
 		this.items = opts.items || [];
+		this.boardTitle = opts.boardTitle || '';
 		this.addCard = () => {
 			this.items.push("");
 			this.update();
