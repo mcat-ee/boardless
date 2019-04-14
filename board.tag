@@ -16,7 +16,7 @@
 			  padding-left:5px;
 			  padding-right:5px;
 			  box-shadow: inset 0px 2px 2px -2px #888, inset 0px 0 0px 0px #CCC;
-			  min-height:58px;
+			  min-height:40px;
 		}
 
 		.unselectable {
