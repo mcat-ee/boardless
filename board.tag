@@ -10,22 +10,31 @@
 		#cards{
 			  display:flex;
 			  flex-direction: column;
-			  padding-top:25px;
-			  padding-bottom:25px;
+			  padding-top:10px;
+			  padding-bottom:10px;
+			  background-color:#ededed;
+			  padding-left:5px;
+			  padding-right:5px;
+			  box-shadow: inset 0px 2px 2px -2px #888, inset 0px 0 0px 0px #CCC;
 		}
 		.addCardButton{
 			width:100%;
 			padding-top:25px;
 			padding-bottom:25px;
 			text-align: center;
-			background-color: #ccc
+			background-color: #dedede;
+			color:green;
 		}
 
 		.boardTitle:focus{
+			border-bottom: 2px dotted green;
 		}
 
 		.boardTitle{
 			font-size: 2em;
+			background-color:#dedede;
+			padding-top:10px;
+			padding-bottom:10px;
 		}
 
 		[contenteditable=true]:empty:before {
@@ -46,14 +55,14 @@
 		.rowContainer{
 			display: flex;
 			flex-direction: row;
-			min-width: 300px;
-			width:300px;
-			min-height: 50px;
-			background-color: #eee; 
+			margin-bottom:5px;
+			background-color: #fdfdfd; 
+			box-shadow: 0px 2px 2px #888;
+			padding:5px;
 		}
 
 		.handle {
-
+			flex: 0.15;
 		}
 
 		.handle:after {
