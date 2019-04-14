@@ -32,7 +32,7 @@
 		    //API TEST
 		    //
 		    window.makeRequest = (requestType,pathString, dataObj, onSuccessFunction, onFailureFunction) => {
-		    	var url = "https://wjnm3j3s18.execute-api.us-east-1.amazonaws.com/dev" + pathString;
+		    	var url = "https://bmuviemth6.execute-api.ap-southeast-2.amazonaws.com/dev" + pathString;
 
 		    	var params = {
 					type: requestType,
@@ -49,7 +49,7 @@
 		    	$.ajax(params)
 		    }
 
-		    makeRequest("GET", "/api/test",null,(data) => { console.log("Success!")},(err)=> {
+		    makeRequest("GET", "/api/getBoards",null,(data) => { console.log("Success!"); console.log(data)},(err)=> {
 		    	console.log("Nope :(");
 		    })
 	    </script>
