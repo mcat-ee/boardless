@@ -31,23 +31,27 @@
 
 		    //API TEST
 		    //
-		    var url = "https://wjnm3j3s18.execute-api.us-east-1.amazonaws.com/dev/api/test";
-		    $.ajax({
-					type: 'GET',
+		    window.makeRequest = (requestType,pathString, dataObj, onSuccessFunction, onFailureFunction) => {
+		    	var url = "https://wjnm3j3s18.execute-api.us-east-1.amazonaws.com/dev" + pathString;
+
+		    	var params = {
+					type: requestType,
 					url: url,
 					crossDomain: true,
 					timeout: 5200,
-					success: function(data) {
-						console.log("SUCCESS!");
-						console.log(data);
-					},
-					error: function(xhr,type) {
-						console.log("ERROR");
-						console.log(xhr.responseText);
-						console.log(xhr);
-						console.log(type);
-					}
-				})
+					success: onSuccessFunction(data),
+					error: onFailureFunction(data), 
+				};
+				if(requestType == "POST") {
+					params.data = JSON.stringify(data);
+					params.contentType = 'application/json';
+				}
+		    	$.ajax(params)
+		    }
+
+		    makeRequest("GET", "/api/test",null,(data) => { console.log("Success!")},(err)=> {
+		    	console.log("Nope :(");
+		    })
 	    </script>
 	</body>
 </html>
