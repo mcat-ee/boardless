@@ -30,6 +30,21 @@
       route('first');
     });
 
+    createExistingBoards = () => {
+      if(window.boards) {
+        for(var i = 0 ; i < boards.boards.length; i++) {
+          var boardObject = boards.boards[i];
+
+           var list = document.getElementById("boardHolder");
+            var tag = document.createElement('board');
+            var className = Math.random().toString(36).substring(7);
+            boardTags.push(className);
+            list.appendChild(tag)
+            riot.mount(tag, { boardTitle: boardObject.boardTitle, items: boardObject.cards, classNameForCards: className});
+        }
+      }
+    }
+
     addBoard = () => {
       var list = document.getElementById("boardHolder");
         var tag = document.createElement('board');
