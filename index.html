@@ -27,6 +27,27 @@
 		    riot.compile(function() {
 		      riot.mount('app')
 		    })
+
+
+		    //API TEST
+		    //
+		    var url = "https://wjnm3j3s18.execute-api.us-east-1.amazonaws.com/dev/api/test";
+		    $.ajax({
+					type: 'GET',
+					url: url,
+					crossDomain: true,
+					timeout: 5200,
+					success: function(data) {
+						console.log("SUCCESS!");
+						console.log(data);
+					},
+					error: function(xhr,type) {
+						console.log("ERROR");
+						console.log(xhr.responseText);
+						console.log(xhr);
+						console.log(type);
+					}
+				})
 	    </script>
 	</body>
 </html>
