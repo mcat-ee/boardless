@@ -28,9 +28,6 @@
 		      riot.mount('app')
 		    })
 
-
-		    //API TEST
-		    //
 		    window.makeRequest = (requestType,pathString, dataObj, onSuccessFunction, onFailureFunction) => {
 		    	var url = "https://bmuviemth6.execute-api.ap-southeast-2.amazonaws.com/dev" + pathString;
 
@@ -49,9 +46,7 @@
 		    	$.ajax(params)
 		    }
 
-		    makeRequest("GET", "/api/getBoards",null,(data) => { console.log("Success!"); console.log(data)},(err)=> {
-		    	console.log("Nope :(");
-		    })
+		   
 	    </script>
 	</body>
 </html>
