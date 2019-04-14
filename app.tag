@@ -36,6 +36,7 @@
 
     createExistingBoards = () => {
       if(window.boards) {
+        console.log("Adding existing boards");
         for(var i = 0 ; i < boards.boards.length; i++) {
           var boardObject = boards.boards[i];
 
@@ -46,10 +47,16 @@
             list.appendChild(tag)
             riot.mount(tag, { boardTitle: boardObject.boardTitle, items: boardObject.cards, classNameForCards: className});
         }
+      } else {
+                console.log("Can't add existing boards");
+                if(boards) {
+                  console.log("Wrong Identifier chief");
+                }
       }
     }
 
     addBoard = () => {
+
       var list = document.getElementById("boardHolder");
         var tag = document.createElement('board');
         var className = Math.random().toString(36).substring(7);
